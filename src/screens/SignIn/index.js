@@ -43,6 +43,7 @@ export default () => {
                     placeholder="Digite a sua senha" 
                     value={passwordFiel}
                     onChangeText={value => setPasswordField(value)}
+                    isPassword={true}
                 />
                 <CustomButton>
                     <CustomButtonText>Login</CustomButtonText>

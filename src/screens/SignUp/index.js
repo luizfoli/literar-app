@@ -44,12 +44,14 @@ export default () => {
                     placeholder="Digite sua senha" 
                     value={passwordFiel}
                     onChangeText={value => setPasswordField(value)}
+                    isPassword={true}
                 />
                 <SignInput 
                     IconSvg={LockIcon} 
                     placeholder="Confirmer sua senha" 
                     value={confirmPasswordFiel}
                     onChangeText={value => setConfirmPasswordField(value)}
+                    isPassword={true}
                 />
                 <CustomButton>
                     <CustomButtonText>Cadastrar-se</CustomButtonText>
