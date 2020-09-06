@@ -26,9 +26,15 @@ export default () => {
 
     handleSignClick = () => {
         navigation.reset({
+            routes: [{name: 'Home'}]
+        });
+    };
+
+    handleMessageClick = () => {
+        navigation.reset({
             routes: [{name: 'SignUp'}]
         });
-    }
+    };
 
     return(
         <Container>
@@ -47,11 +53,11 @@ export default () => {
                     onChangeText={value => setPasswordField(value)}
                     isPassword={true}
                 />
-                <CustomButton>
+                <CustomButton onPress={handleSignClick}>
                     <CustomButtonText>Login</CustomButtonText>
                 </CustomButton>
             </InputArea>
-            <SignMessageButton onPress={handleSignClick}>
+            <SignMessageButton onPress={handleMessageClick}>
                 <SignMessageButtonText>Leitor, você ainda não possui uma conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
             </SignMessageButton>
