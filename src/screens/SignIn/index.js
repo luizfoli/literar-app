@@ -10,6 +10,8 @@ import {
     SignMessageButtonTextBold
 } from './styles';
 
+import { useNavigation } from '@react-navigation/native';
+
 import SignInput from '../../components/SignInput';
 
 import ReaderIcon from '../../assets/reader-icon.svg';
@@ -17,6 +19,13 @@ import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
 
 export default () => {
+
+    const navigation = useNavigation();
+
+    handleSignClick = () => {
+        navigation.navigate('SignUp');
+    }
+
     return(
         <Container>
             <ReaderIcon width="100%" height="160" fill="#ffffff" />
@@ -29,7 +38,7 @@ export default () => {
                     <CustomButtonText>Login</CustomButtonText>
                 </CustomButton>
             </InputArea>
-            <SignMessageButton>
+            <SignMessageButton onPress={handleSignClick}>
                 <SignMessageButtonText>Leitor, você ainda não possui uma conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
             </SignMessageButton>
