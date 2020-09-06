@@ -25,7 +25,9 @@ export default () => {
     const [passwordFiel, setPasswordField] = useState('');
 
     handleSignClick = () => {
-        navigation.navigate('SignUp');
+        navigation.reset({
+            routes: [{name: 'SignUp'}]
+        });
     }
 
     return(

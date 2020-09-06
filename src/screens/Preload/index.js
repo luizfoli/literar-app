@@ -15,7 +15,10 @@ export default () => {
             if(token) {
                 //TODO
             } else {
-                setTimeout(() => navigation.navigate('SignIn'), 1000);
+                setTimeout(() =>         
+                navigation.reset({
+                    routes: [{name: 'SignIn'}]
+                }), 1000);
             }
         })() 
     }, []);
