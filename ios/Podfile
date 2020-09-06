@@ -8,6 +8,7 @@ target 'Literar_App' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'Literar_AppTests' do
     inherit! :complete
     # Pods for testing
