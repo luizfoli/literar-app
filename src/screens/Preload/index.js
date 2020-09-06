@@ -15,7 +15,7 @@ export default () => {
             if(token) {
                 //TODO
             } else {
-                setTimeout(() => navigation.navigate('SignIn'), 2000);
+                setTimeout(() => navigation.navigate('SignIn'), 1000);
             }
         })() 
     }, []);

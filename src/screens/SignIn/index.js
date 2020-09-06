@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { 
     Container, 
@@ -21,6 +21,8 @@ import LockIcon from '../../assets/lock.svg';
 export default () => {
 
     const navigation = useNavigation();
+    const [emailField, setEmailField] = useState('');
+    const [passwordFiel, setPasswordField] = useState('');
 
     handleSignClick = () => {
         navigation.navigate('SignUp');
@@ -30,10 +32,18 @@ export default () => {
         <Container>
             <ReaderIcon width="100%" height="160" fill="#ffffff" />
             <InputArea>
-
-                <SignInput IconSvg={EmailIcon} placeholder="Digite seu e-mail" />
-                <SignInput IconSvg={LockIcon} placeholder="Digite a sua senha" />
-
+                <SignInput 
+                    IconSvg={EmailIcon}
+                    placeholder="Digite seu e-mail"
+                    value={emailField}
+                    onChangeText={value => setEmailField(value)}
+                />
+                <SignInput 
+                    IconSvg={LockIcon} 
+                    placeholder="Digite a sua senha" 
+                    value={passwordFiel}
+                    onChangeText={value => setPasswordField(value)}
+                />
                 <CustomButton>
                     <CustomButtonText>Login</CustomButtonText>
                 </CustomButton>
@@ -43,5 +53,5 @@ export default () => {
                 <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
             </SignMessageButton>
         </Container>
-    )
+    );
 }
