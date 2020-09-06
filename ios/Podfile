@@ -9,6 +9,8 @@ target 'Literar_App' do
   use_react_native!(:path => config["reactNativePath"])
 
 
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'Literar_AppTests' do
     inherit! :complete
     # Pods for testing
