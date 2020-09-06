@@ -5,13 +5,13 @@ platform :ios, '10.0'
 
 target 'Literar_App' do
   config = use_native_modules!
-
   use_react_native!(:path => config["reactNativePath"])
 
-
-  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+  permissions_path = '../node_modules/react-native-permissions/ios'
 
   target 'Literar_AppTests' do
+    permissions_path = '../node_modules/react-native-permissions/ios'
+
     inherit! :complete
     # Pods for testing
   end
@@ -27,9 +27,12 @@ target 'Literar_App' do
 end
 
 target 'Literar_App-tvOS' do
+  permissions_path = '../node_modules/react-native-permissions/ios'
+
   # Pods for Literar_App-tvOS
 
-  target 'Literar_App-tvOSTests' do
+  target 'Literar_App-tvOSTests' do  permissions_path = '../node_modules/react-native-permissions/ios'
+
     inherit! :search_paths
     # Pods for testing
   end
