@@ -22,8 +22,8 @@ export default () => {
             <ReaderIcon width="100%" height="160" fill="#ffffff" />
             <InputArea>
 
-                <SignInput IconSvg={EmailIcon} />
-                <SignInput IconSvg={LockIcon} />
+                <SignInput IconSvg={EmailIcon} placeholder="Digite seu e-mail" />
+                <SignInput IconSvg={LockIcon} placeholder="Digite a sua senha" />
 
                 <CustomButton>
                     <CustomButtonText>Login</CustomButtonText>

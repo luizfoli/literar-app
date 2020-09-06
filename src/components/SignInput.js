@@ -12,10 +12,21 @@ const InputArea = styled.View`
     margin-bottom: 15px;
 `;
 
-export default ({IconSvg}) => {
+const Input = styled.TextInput`
+    flex: 1;
+    font-size: 16px;
+    color: #3B3B98;
+    margin-left: 10px;
+`;
+
+export default ({IconSvg, placeholder}) => {
     return (
         <InputArea>
             <IconSvg width="24" height="24" fill="#3B3B98"></IconSvg>
+            <Input 
+                placeholder={placeholder}
+                placeholderTextColor="#3B3B98"
+            />
         </InputArea>
     )
 }

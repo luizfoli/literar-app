@@ -4,8 +4,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 import { Container, LoaderIcon } from './styles';
-import ReaderIcon from '../../assets/reader-icon.svg';
-
+import ReaderIcon from '../../assets/boy-at-reading-time.svg';
+ 
 export default () => {
     const navigation = useNavigation();
 
@@ -15,10 +15,10 @@ export default () => {
             if(token) {
                 //TODO
             } else {
-                setTimeout(() => navigation.navigate('SignIn'), 4000);
+                setTimeout(() => navigation.navigate('SignIn'), 2000);
             }
         })() 
-    }, [])
+    }, []);
 
 
     return(
