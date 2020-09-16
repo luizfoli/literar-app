@@ -5,7 +5,6 @@ export const Container = styled.SafeAreaView`
     background-color: #3B3B98;
     flex: 1;
     justify-content: space-between;
-    align-items: center;
 `;
 
 export const BookStatusContainer = styled.View`
@@ -47,14 +46,15 @@ export const Book = styled.View`
     margin: 20px 5px;
 `
 
-export const ButtonAddBook = styled.TouchableOpacity`
-    padding: 10px;
-    background-color: #182C61;
-    border-radius: 2px;
+export const TabArea = styled.View`
+    width: 100%;
+    height: 60px;
+    background-color: #3B3B98;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
 `;
 
-export const ButtonAddBookText = styled.Text`
-    font-size: 18px;
-    color: #fff;
-    text-align: center;
+export const TabButton = styled.TouchableOpacity`
+    padding: 20px 0px;
 `;

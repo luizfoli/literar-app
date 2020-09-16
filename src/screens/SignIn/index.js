@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { 
-    Container, 
+    Container,
     InputArea,
     CustomButton,
     CustomButtonText,
@@ -59,7 +59,7 @@ export default () => {
             </InputArea>
             <SignMessageButton onPress={handleMessageClick}>
                 <SignMessageButtonText>Leitor, você ainda não possui uma conta?</SignMessageButtonText>
-                <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
+                <SignMessageButtonTextBold>Cadastre-se.</SignMessageButtonTextBold>
             </SignMessageButton>
         </Container>
     );

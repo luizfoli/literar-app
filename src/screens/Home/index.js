@@ -8,7 +8,15 @@ import {
     BooksStatusSubText,
     BooksViewerContainer,
     Book,
+    TabArea,
+    TabButton
 } from './styles';
+
+
+import HouseIcon from '../../assets/house.svg';
+import VisionIcon from '../../assets/vision.svg';
+import MagnifyingGlassIcon from '../../assets/magnifying-glass.svg';
+import HeartIcon from '../../assets/heart.svg';
 
 export default () => {
     return (
@@ -53,6 +61,20 @@ export default () => {
                     <Book></Book>
                 </BooksViewerContainer>
             </BookStatusContainer>
+            <TabArea>
+                <TabButton>
+                    <HouseIcon width="28" height="28" fill="#FFF" />
+                </TabButton>
+                <TabButton>
+                    <MagnifyingGlassIcon width="28" height="28" fill="#FFF" />
+                </TabButton>
+                <TabButton>
+                    <HeartIcon width="28" height="28" fill="#FFF" />
+                </TabButton>
+                <TabButton>
+                    <VisionIcon width="28" height="28" fill="#FFF" />
+                </TabButton>
+            </TabArea>
         </Container>
     );
 };
