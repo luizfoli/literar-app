@@ -13,49 +13,89 @@ import {
 import TabArea from '../../components/Tab/TabArea';
 
 export default () => {
+    
+    const books = {
+        reading: [
+            {
+                name: '',
+                imagePath: ''
+            }
+        ],
+        wannaRead: [
+            {
+                name: '',
+                imagePath: ''
+            },
+            {
+                name: '',
+                imagePath: ''
+            },
+            {
+                name: '',
+                imagePath: ''
+            }
+        ],
+        read: [
+            {
+                name: '',
+                imagePath: ''
+            },
+            {
+                name: '',
+                imagePath: ''
+            }
+        ]
+    };
+
     return (
         <Container>
             <BookStatusContainer>
                 <BooksHeaderContainer>
                     <BookStatusText>Lendo</BookStatusText>
-                    <BooksStatusSubText>(1)</BooksStatusSubText>
+                    <BooksStatusSubText>({books.reading.length})</BooksStatusSubText>
                 </BooksHeaderContainer>
                 <BooksViewerContainer 
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}>
-                    <Book></Book>
+                    {
+                        books.reading.map(book => BookComponent())
+                    }
                 </BooksViewerContainer>
             </BookStatusContainer>
             <BookStatusContainer>
                 <BooksHeaderContainer>
                     <BookStatusText>Quero Ler</BookStatusText>
-                    <BooksStatusSubText>(4)</BooksStatusSubText>
+                    <BooksStatusSubText>({books.wannaRead.length})</BooksStatusSubText>
                 </BooksHeaderContainer>
                 <BooksViewerContainer 
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}>
-                    <Book></Book>
-                    <Book></Book>
-                    <Book></Book>
-                    <Book></Book>
+                    {
+                        books.wannaRead.map(book => BookComponent())
+                    }
                 </BooksViewerContainer>
             </BookStatusContainer>
             <BookStatusContainer>
                 <BooksHeaderContainer>
                     <BookStatusText>Lido</BookStatusText>
-                    <BooksStatusSubText>(1)</BooksStatusSubText>
+                    <BooksStatusSubText>({books.read.length})</BooksStatusSubText>
                 </BooksHeaderContainer>
                 <BooksViewerContainer 
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                 >
-                    <Book></Book>
-                    <Book></Book>
-                    <Book></Book>
-                    <Book></Book>
+                    {
+                        books.read.map(book => BookComponent())
+                    }
                 </BooksViewerContainer>
             </BookStatusContainer>
             <TabArea />
         </Container>
     );
+};
+
+const BookComponent = () => {
+    return (
+        <Book></Book>
+    )
 };
