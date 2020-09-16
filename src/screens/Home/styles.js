@@ -45,16 +45,3 @@ export const Book = styled.View`
     background-color: #fff;
     margin: 20px 5px;
 `
-
-export const TabArea = styled.View`
-    width: 100%;
-    height: 60px;
-    background-color: #3B3B98;
-    flex: 1;
-    flex-direction: row;
-    justify-content: center;
-`;
-
-export const TabButton = styled.TouchableOpacity`
-    padding: 20px 0px;
-`;
