@@ -12,6 +12,7 @@ import {
 
 import { useNavigation } from '@react-navigation/native';
 
+import Api from '../../Api';
 import SignInput from '../../components/SignInput';
 
 import ReaderIcon from '../../assets/reader-icon.svg';
@@ -24,10 +25,13 @@ export default () => {
     const [emailField, setEmailField] = useState('');
     const [passwordFiel, setPasswordField] = useState('');
 
-    handleSignClick = () => {
-        navigation.reset({
-            routes: [{name: 'Home'}]
-        });
+    handleSignClick = async () => {
+        const response =  await Api.signIn(emailField, passwordFiel);
+        if(response.success) {
+            navigation.reset({
+                routes: [{name: 'Home'}]
+            });
+        }
     };
 
     handleMessageClick = () => {
