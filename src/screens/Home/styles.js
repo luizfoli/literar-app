@@ -39,9 +39,4 @@ export const BooksViewerContainer = styled.ScrollView`
     overflow: scroll;
 `;
     
-export const Book = styled.View`
-    width: 140px;
-    height: 160px;
-    background-color: #fff;
-    margin: 20px 5px;
-`
+export const Book = styled.TouchableNativeFeedback``

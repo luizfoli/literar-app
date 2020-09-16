@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 import TabArea from '../../components/Tab/TabArea';
+import { ImageBackground } from "react-native";
 
 export default () => {
     
@@ -18,31 +19,31 @@ export default () => {
         reading: [
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             }
         ],
         wannaRead: [
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             },
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             },
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             }
         ],
         read: [
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             },
             {
                 name: '',
-                imagePath: ''
+                imagePath: 'http://books.google.com/books/content?id=Y1HkuAwYUnsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
             }
         ]
     };
@@ -58,7 +59,7 @@ export default () => {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}>
                     {
-                        books.reading.map(book => BookComponent())
+                        books.reading.map(book => BookComponent(book))
                     }
                 </BooksViewerContainer>
             </BookStatusContainer>
@@ -71,7 +72,7 @@ export default () => {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}>
                     {
-                        books.wannaRead.map(book => BookComponent())
+                        books.wannaRead.map(book => BookComponent(book))
                     }
                 </BooksViewerContainer>
             </BookStatusContainer>
@@ -85,7 +86,7 @@ export default () => {
                     showsHorizontalScrollIndicator={false}
                 >
                     {
-                        books.read.map(book => BookComponent())
+                        books.read.map(book => BookComponent(book))
                     }
                 </BooksViewerContainer>
             </BookStatusContainer>
@@ -94,8 +95,17 @@ export default () => {
     );
 };
 
-const BookComponent = () => {
+const BookComponent = ({name, imagePath}) => {
     return (
-        <Book></Book>
+        <Book>
+            <ImageBackground 
+            source={{uri: imagePath}}
+                style={{
+                    width: 120,
+                    height: 190,
+                    margin: 2
+                }}
+            ></ImageBackground>
+        </Book>
     )
 };
