@@ -11,8 +11,8 @@ import {
 } from './styles';
 
 import {
-    Heading,
-    ContainerView
+    ContainerViewComponent,
+    HeadingComponent
 } from '../../components/Global/GlobalComponents';
 
 import TabArea from '../../components/Tab/TabArea';
@@ -55,8 +55,8 @@ export default () => {
 
     return (
         <Container>
-            <Heading>literar-se.</Heading>
-            <ContainerView>
+            <HeadingComponent></HeadingComponent>
+            <ContainerViewComponent>
                 <BookStatusContainer>
                 <BooksHeaderContainer>
                     <BookStatusText>Lendo</BookStatusText>
@@ -97,7 +97,7 @@ export default () => {
                         }
                     </BooksViewerContainer>
                 </BookStatusContainer>
-            </ContainerView>
+            </ContainerViewComponent>
             <TabArea />
         </Container>
 
