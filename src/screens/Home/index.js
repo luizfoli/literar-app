@@ -2,6 +2,8 @@ import React from 'react';
 
 import {
     Container,
+    Heading,
+    ContainerView,
     BookStatusContainer,
     BooksHeaderContainer,
     BookStatusText,
@@ -50,7 +52,9 @@ export default () => {
 
     return (
         <Container>
-            <BookStatusContainer>
+            <Heading>literar-se.</Heading>
+            <ContainerView>
+                <BookStatusContainer>
                 <BooksHeaderContainer>
                     <BookStatusText>Lendo</BookStatusText>
                     <BooksStatusSubText>({books.reading.length})</BooksStatusSubText>
@@ -63,39 +67,41 @@ export default () => {
                     }
                 </BooksViewerContainer>
             </BookStatusContainer>
-            <BookStatusContainer>
-                <BooksHeaderContainer>
-                    <BookStatusText>Quero Ler</BookStatusText>
-                    <BooksStatusSubText>({books.wannaRead.length})</BooksStatusSubText>
-                </BooksHeaderContainer>
-                <BooksViewerContainer 
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}>
-                    {
-                        books.wannaRead.map(book => BookComponent(book))
-                    }
-                </BooksViewerContainer>
-            </BookStatusContainer>
-            <BookStatusContainer>
-                <BooksHeaderContainer>
-                    <BookStatusText>Lido</BookStatusText>
-                    <BooksStatusSubText>({books.read.length})</BooksStatusSubText>
-                </BooksHeaderContainer>
-                <BooksViewerContainer 
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                >
-                    {
-                        books.read.map(book => BookComponent(book))
-                    }
-                </BooksViewerContainer>
-            </BookStatusContainer>
+                <BookStatusContainer>
+                    <BooksHeaderContainer>
+                        <BookStatusText>Quero Ler</BookStatusText>
+                        <BooksStatusSubText>({books.wannaRead.length})</BooksStatusSubText>
+                    </BooksHeaderContainer>
+                    <BooksViewerContainer 
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}>
+                        {
+                            books.wannaRead.map(book => BookComponent(book))
+                        }
+                    </BooksViewerContainer>
+                </BookStatusContainer>
+                <BookStatusContainer>
+                    <BooksHeaderContainer>
+                        <BookStatusText>Lido</BookStatusText>
+                        <BooksStatusSubText>({books.read.length})</BooksStatusSubText>
+                    </BooksHeaderContainer>
+                    <BooksViewerContainer 
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    >
+                        {
+                            books.read.map(book => BookComponent(book))
+                        }
+                    </BooksViewerContainer>
+                </BookStatusContainer>
+            </ContainerView>
             <TabArea />
         </Container>
+
     );
 };
 
-const BookComponent = ({name, imagePath}) => {
+const BookComponent = ({name, imagePath}) => { 
     return (
         <Book>
             <ImageBackground 

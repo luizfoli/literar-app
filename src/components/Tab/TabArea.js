@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useNavigation } from '@react-navigation/native';
+
 import HouseIcon from '../../assets/house.svg'
 import VisionIcon from '../../assets/vision.svg';
 import MagnifyingGlassIcon from '../../assets/magnifying-glass.svg';
@@ -24,12 +26,29 @@ export const TabButton = styled.TouchableOpacity`
 
 
 export default() => {
+
+    const navigation = useNavigation();
+
+    handleTabClick = (index) => {
+        switch(index) {
+            case 0:
+                navigation.reset({
+                    routes: [{name: 'Home'}]
+                });    
+                break;
+            case 1:
+                navigation.navigate('Search');        
+                break;
+        }
+        navigation.navigate('Search');
+    }
+
     return(
         <TabArea>
-            <TabButton>
+            <TabButton onPress={() => handleTabClick(0)}>
                 <HouseIcon width="28" height="28" fill="#FFF" />
             </TabButton>
-            <TabButton>
+            <TabButton onPress={() => handleTabClick(1)}>
                 <MagnifyingGlassIcon width="28" height="28" fill="#FFF" />
             </TabButton>
             <TabButton>

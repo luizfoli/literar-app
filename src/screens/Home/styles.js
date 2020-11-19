@@ -7,10 +7,22 @@ export const Container = styled.SafeAreaView`
     justify-content: space-between;
 `;
 
+export const Heading = styled.Text`
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+`;
+
+export const ContainerView = styled.View`
+    width: 100%;
+    height: 90%;
+`;
+
 export const BookStatusContainer = styled.View`
-    width: 90%;
-    height: 25%;
-    margin: 20px;
+    width: 100%;
+    height: 30%;
+    margin: 10px 20px;
 `;
 
 export const BooksHeaderContainer = styled.View`
