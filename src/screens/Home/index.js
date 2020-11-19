@@ -2,8 +2,6 @@ import React from 'react';
 
 import {
     Container,
-    Heading,
-    ContainerView,
     BookStatusContainer,
     BooksHeaderContainer,
     BookStatusText,
@@ -11,6 +9,11 @@ import {
     BooksViewerContainer,
     Book
 } from './styles';
+
+import {
+    Heading,
+    ContainerView
+} from '../../components/Global/GlobalComponents';
 
 import TabArea from '../../components/Tab/TabArea';
 import { ImageBackground } from "react-native";
